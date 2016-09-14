@@ -1,0 +1,92 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #FCEDAA;
+$subColor: #F9DB57;
+$keyColor: #14c0c9;
+$fontColor: #4c4c4c;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/*-------------------------------------
+        header
+---------------------------------------*/
+header{
+    width:100%;
+    background-image: url("../images/task-of-lesson7.jpg");
+    background-size:cover;
+    background-position:center center;
+}
+h1{margin-top:5rem;}
+//h2{margin-bottom:3rem;}
+section{width:94%; margin:5rem 3%; float:left;}
+section div {float:left; background-color:$subColor;}
+section div p {padding:1rem;}
+section div p:nth-of-type(2){background-color:darken($subColor,10%);}
+footer{width:100%; clear:both; margin-bottom:3rem;}
+footer input{display:block; margin:0 auto; border-radius:1rem; outline:none;margin-top:1rem;background-color:$subColor;}
+
+// desktop
+@media (min-width: 768px) {
+
+  /* header
+  ------------------------------------------------------------*/
+  header{height:500px;}
+  section div{width:30%*(100%/94%);}
+  section div:nth-of-type(2){margin:0 2%;}
+  footer input{width:40%;height:5rem;}
+}
+@media (max-width: 768px) {
+
+  /* header
+  ------------------------------------------------------------*/
+  header{
+      height:250px;
+  }
+  section div{width:100%; margin-bottom:1rem;}
+  footer input{width:60%;height:4rem;}
+
+}
